@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from './router/router.js'
+import './plugins/element.js'
+import Router from 'vue-router'
 
 Vue.config.productionTip = false
 
@@ -8,3 +10,7 @@ new Vue({
   router,
   render: h => h(App)
 }).$mount('#app')
+export default new Router({
+  routes: [
+  ]
+})
