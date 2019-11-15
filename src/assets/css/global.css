@@ -5,6 +5,9 @@ body,
     height: 100%;
     margin: 0;
     padding: 0;
+    /* 屏幕最小宽度  如果屏幕小于1366，
+    则强制显示为1366px，部分内容隐藏，通过导航条左右滑动看内容*/
+    min-width: 1366px;
 }
 .el-breadcrumb{
     margin-bottom: 15px;
