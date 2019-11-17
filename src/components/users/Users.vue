@@ -255,6 +255,7 @@ export default {
     addUser () {
       this.$refs.addFormRef.validate(async valid => {
         // 提交之前，若表单填写的内容全部符合验证，则返回true
+        console.log(this.$refs)
         // console.log(valid)
         if (!valid) return this.$message.error('请填写完整用户信息')
         // 发起请求

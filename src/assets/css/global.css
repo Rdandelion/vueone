@@ -24,3 +24,6 @@ body,
     margin-top: 15px;
     text-align: center;
 }
+.el-cascader-panel{
+    height: 240px;
+}

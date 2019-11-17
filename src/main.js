@@ -2,11 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router.js'
 import './plugins/element.js'
-/* 以上是项目自建的 */
-/* 导入全局样式 */
 import './assets/css/global.css'
 import axios from 'axios'
 import './assets/fonts/iconfont.css'
+import TreeTable from 'vue-table-with-tree-grid'
 /* 设置请求根路径 */
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 /* 挂载到vue的原型对象上 */
@@ -19,7 +18,8 @@ axios.interceptors.request.use(config => {
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
-
+// 把引入的插件设置为全局组件
+Vue.component('tree-table', TreeTable)
 new Vue({
   router,
   render: h => h(App)

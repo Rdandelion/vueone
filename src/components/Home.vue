@@ -3,7 +3,7 @@
         <!-- 头部区域 -->
         <el-header>
             <div>
-                <img src="../../public/xiamu.jpg" alt="夏目">
+                <img src="../../public/girl.png" alt="女孩">
                 <span>zyh后台管理系统</span>
             </div>
         <el-button type="info" @click="loginout">退出</el-button>
