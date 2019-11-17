@@ -203,7 +203,6 @@ export default {
         console.log(valid)
         if (!valid) return
         console.log(this.addCateForm)
-        // const { data: res } = await this.$http.post('categorise', { params: this.addCateForm })
         const { data: res } = await this.$http.post('categories', this.addCateForm)
         console.log(res)
         if (res.meta.status !== 201) {
