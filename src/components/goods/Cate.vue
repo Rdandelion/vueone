@@ -215,10 +215,10 @@ export default {
     },
     // 点击对话框的关闭事件，重置表单数据
     addCateDialogClose () {
-      // this.$refs.addCateFormRef.resetFields()
-      // this.selectedKeys = []
-      // this.addCateForm.cat_level = 0
-      // this.addCateForm.cat_pid = 0
+      this.$refs.addCateFormRef.resetFields()
+      this.selectedKeys = []
+      this.addCateForm.cat_level = 0
+      this.addCateForm.cat_pid = 0
     }
   }
 }
