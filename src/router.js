@@ -24,6 +24,10 @@ const router = new Router({
         { path: '/roles', component: Roles },
         { path: '/categories', component: Cate },
         { path: '/params', component: Params }
+<<<<<<< HEAD
+=======
+
+>>>>>>> goods_params
       ]
     }
   ]
