@@ -22,17 +22,6 @@
     <!-- tab栏区域 -->
     <el-tabs v-model="activeName" @tab-click="handleTabClick">
         <!-- 添加动态参数的面板 -->
-<<<<<<< HEAD
-        <el-tab-pane label="动态参数" name="first">
-            <el-button type="primary" size="mini" :disabled="isBtnDisable">添加参数</el-button>
-        </el-tab-pane>
-        <!-- 添加静态属性的面板 -->
-        <el-tab-pane label="静态属性" name="second">
-            <el-button type="primary" size="mini" :disabled="isBtnDisable">添加属性</el-button>
-        </el-tab-pane>
-     </el-tabs>
-</el-card>
-=======
         <el-tab-pane label="动态参数" name="many">
           <el-button type="primary" size="mini" :disabled="isBtnDisable" @click="addDialogVisible=true">添加参数</el-button>
           <!-- 动态参数表格 -->
@@ -116,7 +105,6 @@
     <el-button type="primary" @click="editParams">确 定</el-button>
   </span>
 </el-dialog>
->>>>>>> goods_params
   </div>
 </template>
 
@@ -135,9 +123,6 @@ export default {
       //   级联选择框双向绑定到的数组
       selectedCateKeys: [],
       //   被激活的页签的名称
-<<<<<<< HEAD
-      activeName: 'first'
-=======
       activeName: 'many',
       // 动态参数的数据
       manyTableData: [],
@@ -173,7 +158,6 @@ export default {
       inputVisible: false,
       // 文本框中输入的内容（自定义tag中）
       inputValue: ''
->>>>>>> goods_params
     }
   },
   created () {
@@ -189,28 +173,6 @@ export default {
       //   this.$message.success('请求成功')
       //   把数据列表，赋值给catelist
       this.catelist = res.data
-<<<<<<< HEAD
-      console.log(this.catelist)
-    },
-    // 级联选择框变化，会触发这个函数
-    handleChange () {
-    // 如果选中的是三级分类，则返回
-      if (this.selectedCateKeys.length !== 3) {
-        this.selectedCateKeys = []
-        return 0
-      }
-      // 证明选中的是三级分类
-      console.log(this.selectedCateKeys)
-    },
-    // tab栏点击事件处理函数
-    handleTabClick () {
-      console.log(this.activeName)
-    }
-  },
-  computed: {
-    isBtnDisable () {
-      //   如果按钮需要被禁用，则返回true，否则返回false
-=======
       // console.log(this.catelist)
     },
     // 级联选择框变化，会触发这个函数
@@ -373,13 +335,10 @@ export default {
   computed: {
     //   如果按钮需要被禁用，则返回true，否则返回false
     isBtnDisable () {
->>>>>>> goods_params
       if (this.selectedCateKeys.length !== 3) {
         return true
       }
       return false
-<<<<<<< HEAD
-=======
     },
     // 当前选中的三级分类的id
     cateId () {
@@ -394,7 +353,6 @@ export default {
         return '动态参数'
       }
       return '静态属性'
->>>>>>> goods_params
     }
   }
 }
@@ -407,13 +365,10 @@ margin: 15px 0 ;
 .el-cascader{
 margin:0 15px;
 }
-<<<<<<< HEAD
-=======
 .el-tag {
 margin: 10px;
 }
 .input-new-tag {
   width: 120px;
 }
->>>>>>> goods_params
 </style>
