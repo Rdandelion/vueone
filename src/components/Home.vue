@@ -148,4 +148,8 @@ span{
   letter-spacing: 0.2em;
   cursor: pointer;
 }
+.el-main{
+  overflow: auto;
+  height:100%;
+}
 </style>
