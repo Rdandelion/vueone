@@ -40,7 +40,7 @@
     两者要保持一致，不一致时，以data的设置为主，只是此时显示的条数与真是的不符，算是个bug吧 -->
     <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
      :current-page="querInfo.pagenum" :page-sizes="[5, 10, 15, 20]"  :page-size="querInfo.pagesize"
-      layout="total, sizes, prev, pager, next, jumper" :total="total">
+      layout="total, sizes, prev, pager, next, jumper" :total="total"  :pager-count="5">
     </el-pagination>
 </el-card>
 <!-- 添加分类的对话框 -->

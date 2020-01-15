@@ -7,7 +7,8 @@ import { Button, Form, FormItem,
   Table, TableColumn, Switch, Tooltip,
   Pagination, Dialog, MessageBox, Tag,
   Tree, Select, Option, Cascader, Alert,
-  Tabs, TabPane } from 'element-ui'
+  Tabs, TabPane, Steps, Step, CheckboxGroup,
+  Checkbox, Upload } from 'element-ui'
 
 /* 用use注册为全局可用的组件 */
 Vue.use(Button)
@@ -40,7 +41,11 @@ Vue.use(Cascader)
 Vue.use(Alert)
 Vue.use(Tabs)
 Vue.use(TabPane)
-
+Vue.use(Steps)
+Vue.use(Step)
+Vue.use(CheckboxGroup)
+Vue.use(Checkbox)
+Vue.use(Upload)
 // 全局挂载，前面有解释
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm

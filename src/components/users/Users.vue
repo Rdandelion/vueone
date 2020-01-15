@@ -56,7 +56,7 @@
     <!-- 注意：在data里有设置每页显示几条数据，在分页栏里显示每页几条数据时，
     两者要保持一致，不一致时，以data的设置为主，只是此时显示的条数与真是的不符，算是个bug吧 -->
     <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
-     :current-page="queryInfo.pagenum" :page-sizes="[2, 4, 7, 10]"  :page-size="queryInfo.pagesize"
+     :current-page="queryInfo.pagenum" :page-sizes="[10, 20, 30, 40]"  :page-size="queryInfo.pagesize"
       layout="total, sizes, prev, pager, next, jumper" :total="total">
     </el-pagination>
 </el-card>
@@ -153,7 +153,7 @@ export default {
         // 当前页码值
         'pagenum': 1,
         // 每页显示条数
-        'pagesize': 2
+        'pagesize': 10
       },
       // 用户信息
       UserLise: [],

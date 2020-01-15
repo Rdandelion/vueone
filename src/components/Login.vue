@@ -21,6 +21,7 @@
           <el-form-item class="btns">
               <el-button type="primary" @click="login">提交</el-button>
               <el-button type="primary" @click="resetLoginForm">重置</el-button>
+              <el-button type="primary" @click="quit">退出</el-button>
           </el-form-item>
         </el-form>
       </div>
@@ -59,6 +60,9 @@ export default {
       // $refs.loginFormRef可以在上一步的打印中找到
       // this.$refs.loginFormRef获取到了引用对象，也就是form对象
       this.$refs.loginFormRef.resetFields()
+    },
+    quit () {
+      this.$router.push('/shi')
     },
     login () {
       this.$refs.loginFormRef.validate(async valid => {
