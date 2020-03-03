@@ -70,7 +70,7 @@ export default {
   methods: {
     async getOrderList () {
       const { data: res } = await this.$http.get('orders', { params: this.queryInfo })
-      console.log(res)
+      // console.log(res)
       if (res.meta.status !== 200) return this.$message.error('获取订单列表失败')
       this.orderlist = res.data.goods
       this.total = res.data.total

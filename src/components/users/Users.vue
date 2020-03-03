@@ -236,11 +236,11 @@ export default {
     },
     // 监听switch开关状态的改变
     async userStateChanged (userinfo) {
-      console.log(userinfo)
+      // console.log(userinfo)
       // 错误原因，模版字符串限制只能在模版里使用
       // const { data: res } = await this.$http.put(`users/$ { userinfo.id } /state/$ { userinfo.mg_state }`)
       const { data: res } = await this.$http.put('users/' + userinfo.id + '/state/' + userinfo.mg_state)
-      console.log(res.meta.status)
+      // console.log(res.meta.status)
       if (res.meta.status !== 200) {
         userinfo.mg_state = !userinfo.mg_state
         return this.$message.error('更新用户状态失败')
@@ -255,7 +255,7 @@ export default {
     addUser () {
       this.$refs.addFormRef.validate(async valid => {
         // 提交之前，若表单填写的内容全部符合验证，则返回true
-        console.log(this.$refs)
+        // console.log(this.$refs)
         // console.log(valid)
         if (!valid) return this.$message.error('请填写完整用户信息')
         // 发起请求
@@ -274,7 +274,7 @@ export default {
     },
     // 点击修改
     async showEditDialog (id) {
-      console.log('当前用户id为：' + id)
+      // console.log('当前用户id为：' + id)
       const { data: res } = await this.$http.get('users/' + id)
       // console.log(res)
       if (res.meta.status !== 200) {
@@ -299,7 +299,7 @@ export default {
         if (!valid) return this.$message.error('请填写完整用户信息')
         // 发起请求
         const { data: res } = await this.$http.put('users/' + this.editForm.id, { email: this.editForm.email, mobile: this.editForm.mobile })
-        console.log(res)
+        // console.log(res)
         if (res.meta.status !== 200) {
           return this.$message.error('修改用户失败，原因：' + res.meta.msg)
         }

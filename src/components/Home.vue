@@ -4,9 +4,12 @@
         <el-header>
             <div>
                 <img src="../../public/girl.png" alt="女孩">
-                <span>zyh后台管理系统</span>
+                <span>工艺品后台管理系统</span>
             </div>
-        <el-button type="info" @click="loginout">退出</el-button>
+            <div class="btn">
+              <el-button type="info" @click="loginout">退出</el-button>
+              <el-button type="info" @click="toindex">主页</el-button>
+            </div>
         </el-header>
         <!-- 页面主体区域 -->
     <el-container>
@@ -80,6 +83,9 @@ export default {
       window.sessionStorage.clear()
       this.$router.push('/login')
     },
+    toindex () {
+      this.$router.push('/index')
+    },
     // 获取所有的菜单
     async getMenuList () {
       const { data: res } = await this.$http.get('menus')
@@ -138,6 +144,10 @@ span{
 }
 .el-submenu__title * {
     vertical-align: top;
+}
+.el-button {
+  float:right;
+  margin-left: 20px;
 }
 .toggle_button{
   background-color: #4A5064;

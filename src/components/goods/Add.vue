@@ -199,10 +199,10 @@ export default {
         if (res.meta.status !== 200) {
           return this.$message.error('获取静态参数列表失败')
         }
-        console.log(res.data)
+        // console.log(res.data)
         this.onlyTableData = res.data
       } else if (this.activeIndex === '3') {
-        console.log('3')
+        // console.log('3')
       }
     },
     // 处理图片预览效果
@@ -244,6 +244,7 @@ export default {
         // 进行深拷贝，既不影响前面的级联，又能改变数组样式来提交
         // 深拷贝loadsh，里面有个方法 clone（obj）
         const form = _.cloneDeep(this.addForm)
+        console.log(this.addForm)
         form.goods_cat = form.goods_cat.join(',')
         // 处理动态参数
         this.manyTableData.forEach(item => {
@@ -262,7 +263,7 @@ export default {
           this.addForm.attrs.push(newInfo)
         })
         form.attrs = this.addForm.attrs
-        console.log(form)
+        // console.log(form)
         const { data: res } = await this.$http.post('goods', form)
         if (res.meta.status !== 201) {
           return this.$message.error('商品添加失败')

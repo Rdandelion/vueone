@@ -75,8 +75,8 @@ export default {
       if (res.meta.status !== 200) {
         return this.$message.console.error('获取商品列表失败，失败原因：' + res.meta.msg)
       }
-      //   this.$message.success('获取商品列表成功')
-      // console.log(res.data)
+      // this.$message.success('获取商品列表成功')
+      console.log(res.data)
       this.goodList = res.data.goods
       this.total = res.data.total
     },

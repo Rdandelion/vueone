@@ -172,14 +172,14 @@ export default {
         return this.$message.error('请求父级分类数据失败，失败原因：' + res.meta.res)
       }
       // this.$message.success('请求成功')
-      console.log(res.data)
+      // console.log(res.data)
       //   把数据列表，赋值给ParentCateList
       this.parentCateList = res.data
     },
     // 选择项发生变化触发这个值
     parentCateChanged () {
       // 注意：在global里设置完el-cascader-panel:100px之后，二级才显示出来
-      console.log(this.selectedKeys)
+      // console.log(this.selectedKeys)
       // 如果selectedKeys 数组中的length 大于0，证明选中的是父级分类或其子类
       // 反之，就说明没有选中任何父级及其子类分类
       if (this.selectedKeys.length > 0) {
@@ -197,21 +197,22 @@ export default {
     },
     // 点击确定按钮，添加新的分类
     addCate () {
-      console.log(this.addCateForm)
+      // console.log(this.addCateForm)
       // 表单预验证
       this.$refs.addCateFormRef.validate(async valid => {
-        console.log(valid)
+        // console.log(valid)
         if (!valid) return
         console.log(this.addCateForm)
         const { data: res } = await this.$http.post('categories', this.addCateForm)
         console.log(res)
         if (res.meta.status !== 201) {
-          return this.$message.error('添加分类失败，失败原因：' + res.meta.msg)
+          return this.$message.error('添加分类失败，失败原因：' + res.meta.msg + '呵呵')
         }
-        console.log('添加分类成功')
+        this.$message.success('添加分类成功')
+        // 刷新列表
         this.getCateList()
+        this.addCateDialogVisible = false
       })
-      this.addCateDialogVisible = false
     },
     // 点击对话框的关闭事件，重置表单数据
     addCateDialogClose () {

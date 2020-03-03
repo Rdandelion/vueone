@@ -154,11 +154,11 @@ export default {
     editUserInfo () {
       this.$refs.editFormRef.validate(async valid => {
         // 提交之前，若表单填写的内容全部符合验证，则返回true
-        console.log(valid)
+        // console.log(valid)
         if (!valid) return this.$message.error('请填写完整用户信息')
         // 发起请求
         const { data: res } = await this.$http.put('roles/' + this.editForm.roleId, { roleName: this.editForm.roleName, roleDesc: this.editForm.roleDesc })
-        console.log(res.meta.status)
+        // console.log(res.meta.status)
         if (res.meta.status !== 200) {
           return this.$message.error('修改角色失败，原因：' + res.meta.msg)
         }
@@ -174,7 +174,7 @@ export default {
     },
     // 点击修改
     async showEditDialog (id) {
-      console.log('当前用户id为：' + id)
+      // console.log('当前用户id为：' + id)
       const { data: res } = await this.$http.get('roles/' + id)
       if (res.meta.status !== 200) {
         return this.$message.error('查询用户失败，原因：' + res.meta.msg)
@@ -195,7 +195,7 @@ export default {
       if (confirmResult !== 'confirm') {
         return this.$message.info('已取消删除')
       }
-      console.log('点击了删除，真的删除要去除代码里的注释')
+      // console.log('点击了删除，真的删除要去除代码里的注释')
       //   需要删除时，在把这部分代码取消注释
       //   const { data: res } = await this.$http.delete('roles/' + id)
       //   if (res.meta.status !== 200) {
@@ -210,7 +210,7 @@ export default {
     },
     // 根据ID删除对应的权限
     async removeRightById (role, rightId) {
-      console.log('执行了')
+      // console.log('执行了')
       // 弹框提示是否要删除
       const confirmResult = await this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
         confirmButtonText: '确定',
@@ -221,7 +221,7 @@ export default {
       if (confirmResult !== 'confirm') {
         return this.$message.info('已取消删除')
       }
-      console.log('点击了删除，真的删除要去除代码里的注释')
+      // console.log('点击了删除，真的删除要去除代码里的注释')
       // 需要删除时，在把这部分代码取消注释
       // const { data: res } = await this.$http.delete(`roles/ ${role.id}/rights/${rightId}`)
       // if (res.meta.status !== 200) {

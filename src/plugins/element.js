@@ -8,7 +8,8 @@ import { Button, Form, FormItem,
   Pagination, Dialog, MessageBox, Tag,
   Tree, Select, Option, Cascader, Alert,
   Tabs, TabPane, Steps, Step, CheckboxGroup,
-  Checkbox, Upload } from 'element-ui'
+  Checkbox, Upload, Footer, Carousel,
+  CarouselItem, Image, Backtop } from 'element-ui'
 
 /* 用use注册为全局可用的组件 */
 Vue.use(Button)
@@ -46,6 +47,11 @@ Vue.use(Step)
 Vue.use(CheckboxGroup)
 Vue.use(Checkbox)
 Vue.use(Upload)
+Vue.use(Footer)
+Vue.use(Carousel)
+Vue.use(CarouselItem)
+Vue.use(Image)
+Vue.use(Backtop)
 // 全局挂载，前面有解释
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
