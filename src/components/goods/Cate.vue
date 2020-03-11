@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="all">
     <!-- 面包屑导航区域 -->
   <el-breadcrumb separator-class="el-icon-arrow-right">
   <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
@@ -30,9 +30,9 @@
             <el-tag type="warning" size="mini" v-else>三级</el-tag>
         </template>
         <!-- 操作列 -->
-        <template slot="opt">
-            <el-button type="primary" icon="el-icon-edit" size="mini">编辑</el-button>
-            <el-button type="danger" icon="el-icon-delect" size="mini">删除</el-button>
+        <template slot="opt" slot-scope="scope">
+            <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditDialog(scope.row.cat_id)">编辑</el-button>
+            <el-button type="danger" icon="el-icon-delect" size="mini" @click="removeById(scope.row.cat_id)">删除</el-button>
             </template>
       </tree-table>
     <!-- 分页 -->
@@ -61,6 +61,18 @@
   <span slot="footer" class="dialog-footer">
     <el-button @click="addCateDialogVisible = false">取 消</el-button>
     <el-button type="primary" @click="addCate">确 定</el-button>
+  </span>
+</el-dialog>
+<!-- 修改商品的对话框 -->
+<el-dialog title="修改商品" :visible.sync="editDialogVisible" width="50%" @close='editDialogClose'>
+  <el-form :model="editForm" :rules="editFormRules" ref="editFormRef" label-width="90px">
+    <el-form-item label="商品名称" prop="cat_name">
+      <el-input v-model="editForm.cat_name"></el-input>
+    </el-form-item>
+  </el-form>
+  <span slot="footer" class="dialog-footer">
+    <el-button @click="editDialogVisible = false">取消</el-button>
+    <el-button type="primary" @click="editUserInfo">确定</el-button>
   </span>
 </el-dialog>
 </div>
@@ -128,7 +140,19 @@ export default {
         children: 'children'
       },
       // 选中的父级分类数组
-      selectedKeys: []
+      selectedKeys: [],
+      editDialogVisible: false,
+      editForm: {
+        cat_id: 1,
+        cat_name: ''
+      },
+      editFormRules: {
+        // 验证角色名称是否合法
+        goods_name: [
+          { required: true, message: '请输入角色名称', trigger: 'blur' },
+          { min: 2, max: 10, message: '长度在 1 到 10 个字符', trigger: 'blur' }
+        ]
+      }
     }
   },
   created () {
@@ -142,7 +166,7 @@ export default {
         return this.$message.error('请求列表失败，失败原因：' + res.meta.res)
       }
       //   this.$message.success('请求成功')
-      // console.log(res.data.result)
+      console.log(res.data.result)
       //   把数据列表，赋值给catelist
       this.catelist = res.data.result
       //   为总数据条数赋值
@@ -220,6 +244,61 @@ export default {
       this.selectedKeys = []
       this.addCateForm.cat_level = 0
       this.addCateForm.cat_pid = 0
+    },
+    // 删除
+    async removeById (id) {
+      const confirmResult = await this.$confirm('此操作将永久删除该商品, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).catch(err => err)
+      if (confirmResult !== 'confirm') {
+        return this.$message.info('已取消删除')
+      }
+      const { data: res } = await this.$http.delete(`categories/${id}`)
+      if (res.meta.status !== 200) {
+        return this.$message.error('删除失败，失败原因' + res.meta.msg)
+      }
+      this.$message.success('删除成功')
+      this.getCateList()
+    },
+    // 每次点击修改都会重置
+    editDialogClose (id) {
+      this.$refs.editFormRef.resetFields()
+    },
+    // 点击修改按钮，获取当前id的信息
+    async showEditDialog (id) {
+      // this.editDialogVisible = true
+      console.log('当前用户id为：' + id)
+      // , { goods_name: this.addForm.goods_name, goods_price: this.addForm.goods_price, goods_number: this.addForm.goods_number, goods_weight: this.addForm.goods_weight }
+      const { data: res } = await this.$http.get('categories/' + id)
+      if (res.meta.status !== 200) {
+        return this.$message.error('查询用户失败，原因：' + res.meta.msg)
+      }
+      this.editForm = res.data
+      this.editDialogVisible = true
+    },
+    // 点击确定  确认修改并提交（最好改下名字）
+    editUserInfo () {
+      this.$refs.editFormRef.validate(async valid => {
+      // 提交之前，若表单填写的内容全部符合验证，则返回true
+      // console.log(valid)
+        if (!valid) return this.$message.error('请填写完整用户信息')
+        // 发起请求
+        const { data: res } = await this.$http.put('categories/' + this.editForm.cat_id, { cat_name: this.editForm.cat_name })
+        console.log(res.meta.status)
+        if (res.meta.status !== 201) {
+          return this.$message.error('修改角色失败，原因：' + res.meta.msg)
+        }
+        // console.log('success')
+        // console.log('修改用户成功')
+        this.editForm = res.data
+        // 成功添加用户后，重新渲染页面
+        this.getCateList()
+        // 成功添加用户后就关闭绘画框
+        this.editDialogVisible = false
+        this.$message.success('修改用户成功')
+      })
     }
   }
 }
@@ -231,5 +310,8 @@ export default {
 }
 .el-cascader{
   width: 100%;
+}
+.all {
+  margin: 20px;
 }
 </style>

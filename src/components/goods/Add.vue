@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="all">
     <!-- 面包屑导航区域 -->
   <el-breadcrumb separator-class="el-icon-arrow-right">
   <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
@@ -293,5 +293,8 @@ export default {
 }
 .btnadd {
   margin-top: 15px;
+}
+.all {
+  margin: 20px;
 }
 </style>

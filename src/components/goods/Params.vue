@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="all">
   <!-- 面包屑导航区域 -->
   <el-breadcrumb separator-class="el-icon-arrow-right">
   <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
@@ -370,5 +370,8 @@ margin: 10px;
 }
 .input-new-tag {
   width: 120px;
+}
+.all {
+  margin: 20px;
 }
 </style>

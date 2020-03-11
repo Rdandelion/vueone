@@ -10,32 +10,18 @@
         <div class="bear"></div>
         <!-- 导航栏居中  外面大盒子 -->
         <div class="header">
-          <div class="wechat">官方微信</div>
+          <div class="wechat">
+            <a href="javascript:;">官方微信</a>
+            <div class="er">
+            <img src="../../../public/images/er.png" alt="">
+            </div>
+          </div>
           <!-- 登录与注册 -->
           <div class="login_register">
             <span>你好！</span>
                <router-link :to="{ path: './login'}" replace>请登录</router-link>
                <router-link :to="{ path: './register'}" replace>免费注册</router-link>
-            <!-- <a href="#" @click="login">请登录</a>
-            <a href="#" @click="register">免费注册</a> -->
           </div>
-          <!-- 右侧导航菜单 -->
-          <el-menu  class="el-menu-demo"  mode="horizontal"  background-color="#333"  text-color="#fff"  active-text-color="#DE342F">
-              <el-menu-item index="1">处理中心</el-menu-item>
-              <el-submenu index="2">
-                <template slot="title">我的工作台</template>
-                <el-menu-item index="2-1">选项1</el-menu-item>
-                <el-menu-item index="2-2">选项2</el-menu-item>
-                <el-menu-item index="2-3">选项3</el-menu-item>
-                <el-submenu index="2-4">
-                  <template slot="title">选项4</template>
-                  <el-menu-item index="2-4-1">选项1</el-menu-item>
-                  <el-menu-item index="2-4-2">选项2</el-menu-item>
-                  <el-menu-item index="2-4-3">选项3</el-menu-item>
-                </el-submenu>
-              </el-submenu>
-              <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
-          </el-menu>
         </div>
       </el-header>
       <el-main>
@@ -109,22 +95,22 @@
               <ul>
                 <li>
                   <a href="#">
-                    <img src="../../../public/images/pic.jpg" alt="">
+                    <img src="../../../public/gold/1_1.jpg" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="../../../public/images/pic.jpg" alt="">
+                    <img src="../../../public/liuli/1_1.jpg" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="../../../public/images/pic.jpg" alt="">
+                    <img src="../../../public/suzhi/1_1.jpg" alt="">
                   </a>
                 </li>
                 <li class="last">
                   <a href="#">
-                    <img src="../../../public/images/pic.jpg" alt="">
+                    <img src="../../../public/ranzi/1_1.jpg" alt="">
                   </a>
                 </li>
               </ul>
@@ -152,31 +138,55 @@
                     <li>
                       <a href="javascipt:;">
                         <div class="lan">
-                          <img src="../../../public/images/pic.jpg" alt="陶瓷">
+                          <img src="../../../public/taoci/taoci_1.jpg" alt="陶瓷">
                         </div>
                         <div class="zezhao">
-                          <router-link :to="{ path: './taociPicOne'}" replace>遮罩</router-link>
+                          <router-link :to="{ path: './taociPicOne'}" replace>详情</router-link>
                       </div>
                       </a>
                       <div class="description">
-                        <p>123</p>
+                        <p>唐三彩马</p>
                       </div>
                     </li>
                     <li>
                       <a href="javascipt:;">
                         <div class="lan">
-                          <img src="../../../public/images/pic.jpg" alt="陶瓷">
+                          <img src="https://img.alicdn.com/bao/uploaded/i4/1104199963/O1CN01MpNSWK2NT6aP3ixgO_!!0-item_pic.jpg_360x360xzq90s150.jpg_.webp" alt="陶瓷">
                         </div>
                         <div class="zezhao">
-                          <router-link :to="{ path: './taociPicTwo'}" replace>遮罩2</router-link>
+                          <router-link :to="{ path: './taociPicTwo'}" replace>详情</router-link>
                       </div>
                       </a>
                       <div class="description">
-                        <p>123</p>
+                        <p>摆件阿里</p>
                       </div>
                     </li>
-                    <li>3</li>
-                    <li>4</li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="https://gd4.alicdn.com/imgextra/i1/2881592561/O1CN01KkoB351UmytyjhAEw_!!2881592561.jpg" alt="陶瓷">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './taociPicThree'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>陶瓷牛</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="https://img.alicdn.com/imgextra/i4/1689257838/O1CN01f5IBdY27lqt0vLxOI_!!1689257838.jpg" alt="陶瓷">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './taociPicFour'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>椭圆花瓶</p>
+                      </div>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -200,31 +210,55 @@
                     <li>
                       <a href="javascipt:;">
                         <div class="lan">
-                          <img src="../../../public/images/pic.jpg" alt="陶瓷">
+                          <img src="../../../public/liuli/1_2.jpg" alt="琉璃">
                         </div>
                         <div class="zezhao">
-                        遮罩
+                          <router-link :to="{ path: './liuliPicOne'}" replace>详情</router-link>
                       </div>
                       </a>
                       <div class="description">
-                        <p>123</p>
+                        <p>琉璃天鹅</p>
                       </div>
                     </li>
                     <li>
                       <a href="javascipt:;">
                         <div class="lan">
-                          <img src="../../../public/images/pic.jpg" alt="陶瓷">
+                          <img src="../../../public/liuli/1_3.jpg" alt="琉璃">
                         </div>
                         <div class="zezhao">
-                        遮罩2
+                          <router-link :to="{ path: './liuliPicTwo'}" replace>详情</router-link>
                       </div>
                       </a>
                       <div class="description">
-                        <p>123</p>
+                        <p>万花青蛙</p>
                       </div>
                     </li>
-                    <li>3</li>
-                    <li>4</li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/liuli/1_4.webp" alt="琉璃">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './liuliPicThree'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>琉璃杯</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/liuli/1_4.jpg" alt="琉璃">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './liuliPicFour'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>百顺白菜</p>
+                      </div>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -245,10 +279,58 @@
                 <div class="box-bd">
                   <div class="box_bd_ci">
                   <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/gold/1_2.jpg" alt="琉璃">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './goldPicOne'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>摩天轮</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/gold/1_3.jpg" alt="琉璃">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './goldPicTwo'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>爵杯</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/gold/1_4.gif" alt="金属">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './goldPicThree'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>树叶</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/gold/1_5.jpg" alt="琉璃">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './goldPicFour'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>埃菲尔铁塔</p>
+                      </div>
+                    </li>
                   </ul>
                 </div>
                 </div>
@@ -269,10 +351,58 @@
                 <div class="box-bd">
                   <div class="box_bd_ci">
                   <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/suzhi/1_2.gif" alt="树脂">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './suzhiPicOne'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>秋千夫妇</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/suzhi/1_3.jpg" alt="树脂">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './suzhiPicTwo'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>精致猪猪</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/suzhi/1_4.jpg" alt="树脂">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './suzhiPicThree'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>小和尚</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/suzhi/1_5.jpg" alt="树脂">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './suzhiPicFour'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>丘比特</p>
+                      </div>
+                    </li>
                   </ul>
                 </div>
                 </div>
@@ -293,23 +423,71 @@
                 <div class="box-bd">
                   <div class="box_bd_ci">
                   <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/ranzi/1_2.jpg" alt="染织">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './ranziPicOne'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>竹篮</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/ranzi/1_3.jpg" alt="染织">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './ranziPicTwo'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>针织小熊</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/ranzi/1_4.jpg" alt="染织">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './ranziPicThree'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>竹筒</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/ranzi/1_5.jpg" alt="染织">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './ranziPicFour'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>盛开的花</p>
+                      </div>
+                    </li>
                   </ul>
                 </div>
                 </div>
           </div>
-          <!-- 工艺品延申 -->
+          <!-- 木纸工艺品 -->
           <div class="yanshen">
                 <div class="box-hd">
                   <span class="six"></span>
-                  <h3>工艺品延申</h3>
+                  <h3>木纸工艺品</h3>
                   <div class="tab-list">
                     <ul>
                       <li>
-                        <router-link :to="{ path: './ranshen'}" replace>加载更多</router-link>
+                        <router-link :to="{ path: './more'}" replace>加载更多</router-link>
                       </li>
                     </ul>
                   </div>
@@ -317,10 +495,58 @@
                 <div class="box-bd">
                   <div class="box_bd_ci">
                   <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/more/1_1.jpg" alt="木纸">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './morePicOne'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>首饰盒</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/more/1_2.jpg" alt="木纸">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './morePicTwo'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>桌面日历</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/more/1_3.jpg" alt="木纸">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './morePicThree'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>沙漏笔筒</p>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="javascipt:;">
+                        <div class="lan">
+                          <img src="../../../public/more/1_4.jpg" alt="木纸">
+                        </div>
+                        <div class="zezhao">
+                          <router-link :to="{ path: './morePicFour'}" replace>详情</router-link>
+                      </div>
+                      </a>
+                      <div class="description">
+                        <p>三不猴</p>
+                      </div>
+                    </li>
                   </ul>
                 </div>
                 </div>
@@ -427,6 +653,8 @@ export default {
       window.location.href = './suzhi'
       window.location.href = './taociPicOne'
       window.location.href = './taociPicTwo'
+      window.location.href = './taociPicthree'
+      window.location.href = './taociPicFour'
     }
   }
 }
@@ -728,12 +956,15 @@ a {
   height: 100px;
   text-align: center
 }
+.box_bd_ci .description p{
+  margin-top:40px;
+}
 .lan{
   overflow: hidden;
   width: 290px;
   height: 300px;
 }
-// 图片的遮罩层
+// 图片的详情层
 .box_bd_ci li a {
   overflow: hidden;
   width: 290px;
@@ -766,6 +997,9 @@ a {
 }
 .box_bd_ci a:hover .zezhao {
   opacity: .4;
+}
+.box_bd_ci a{
+  color:white;
 }
 // 底部
 /*footer部分*/
@@ -915,5 +1149,34 @@ table a{
 .nav_main a:hover{
   background-color: black;
   color: white;
+}
+.tuijian .recom-bd li {
+  text-align: center;
+}
+.tuijian .recom-bd img {
+  width: 235px;
+  height: 144px;
+}
+// 二维码
+.wechat a {
+  color: white;
+  font-size: 16px;
+}
+.er img{
+  position: absolute;
+  top: 60px;
+  left: 348px;
+  width: 128px;
+  height: 116px;
+}
+.header .er img{
+  opacity: 0;
+}
+.er img {
+  // 过渡写到本身上， 谁做动画，给谁加
+  transition: all .2s;
+}
+.wechat:hover img{
+    opacity: 1;
 }
 </style>

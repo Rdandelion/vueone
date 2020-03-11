@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="all">
       <!-- 面包屑导航 -->
 <el-breadcrumb separator-class="el-icon-arrow-right">
   <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
@@ -10,9 +10,9 @@
 <el-card>
     <!-- 添加角色按钮区 -->
     <el-row>
-       <el-col>
-    <el-button type="primary">添加角色</el-button>
-        </el-col>
+      <el-col>
+        <el-button type="primary" @click="addDialogVisible = true">添加角色</el-button>
+      </el-col>
     </el-row>
     <!-- 角色列表区域 -->
  <el-table :data="rolesList" border stripe>
@@ -90,6 +90,21 @@
     <el-button type="primary" @click="allotRights">确定</el-button>
   </span>
 </el-dialog>
+<!-- 添加角色的对话框 -->
+<el-dialog  title="添加角色" :visible.sync="addDialogVisible" width="50%" @close="addDialogClosed">
+  <el-form :model="addForm" ref="addFormRef" label-width="70px">
+  <el-form-item label="角色名称" prop="username">
+    <el-input v-model="addForm.roleName"></el-input>
+  </el-form-item>
+  <el-form-item label="角色描述" prop="password">
+    <el-input v-model="addForm.roleDesc"></el-input>
+  </el-form-item>
+  </el-form>
+  <span slot="footer" class="dialog-footer">
+    <el-button @click="addDialogVisible = false">取 消</el-button>
+    <el-button type="primary" @click="addUser">确 定</el-button>
+  </span>
+</el-dialog>
   </div>
 </template>
 
@@ -130,7 +145,14 @@ export default {
       // 默认选中的节点id值为数组
       defKeys: [],
       // 当前即将分配权限的角色的id
-      roleId: ''
+      roleId: '',
+      // 控制添加角色框的显示与隐藏
+      addDialogVisible: false,
+      // 添加用户的表单数据
+      addForm: {
+        roleName: '',
+        roleDesc: ''
+      }
     }
   },
   created () {
@@ -197,12 +219,12 @@ export default {
       }
       // console.log('点击了删除，真的删除要去除代码里的注释')
       //   需要删除时，在把这部分代码取消注释
-      //   const { data: res } = await this.$http.delete('roles/' + id)
-      //   if (res.meta.status !== 200) {
-      //     return this.$message.error('删除用户失败，原因：' + res.meta.msg)
-      //   }
-      //   this.$message.success('删除用户成功')
-      //   this.getRolesList()
+      const { data: res } = await this.$http.delete('roles/' + id)
+      if (res.meta.status !== 200) {
+        return this.$message.error('删除用户失败，原因：' + res.meta.msg)
+      }
+      this.$message.success('删除用户成功')
+      this.getRolesList()
     },
     // 每次点击修改都会重置
     editDialogClose (id) {
@@ -223,14 +245,14 @@ export default {
       }
       // console.log('点击了删除，真的删除要去除代码里的注释')
       // 需要删除时，在把这部分代码取消注释
-      // const { data: res } = await this.$http.delete(`roles/ ${role.id}/rights/${rightId}`)
-      // if (res.meta.status !== 200) {
-      //   return this.$message.error('删除权限失败，原因：' + res.meta.msg)
-      // }
-      // this.$message.success('删除权限成功')
+      const { data: res } = await this.$http.delete(`roles/ ${role.id}/rights/${rightId}`)
+      if (res.meta.status !== 200) {
+        return this.$message.error('删除权限失败，原因：' + res.meta.msg)
+      }
+      this.$message.success('删除权限成功')
       // 不用this.getRolesList()了，this.getRolesList()会重新渲染整个页面，
       //  而role.children = res.data只渲染当前的，且不会关闭下拉框
-      // role.children = res.data
+      role.children = res.data
     },
     // 分配权限的对话框
     async showSetRightDialog (role) {
@@ -275,6 +297,23 @@ export default {
       this.$message.success('分配权限成功')
       this.getRolesList()
       this.setRightDialogVisible = false
+    },
+    // 监听添加用户对话框的关闭事件
+    addDialogClosed () {
+      this.$refs.addFormRef.resetFields()
+    },
+    // 点击添加角色
+    async addUser () {
+      const { data: res } = await this.$http.post('roles', this.addForm)
+      // console.log(res)
+      if (res.meta.status !== 201) {
+        return this.$message.error('添加角色失败，原因：' + res.meta.msg)
+      }
+      this.$message.success('添加角色成功')
+      // 成功添加用户后就关闭绘画框
+      this.addDialogVisible = false
+      // 成功添加用户后，重新渲染页面
+      this.getRolesList()
     }
   }
 }
@@ -298,4 +337,7 @@ border-top: 1px solid #eee;
   display: flex;
   align-items: center;
 }
+ .all {
+    margin: 20px;
+  }
 </style>

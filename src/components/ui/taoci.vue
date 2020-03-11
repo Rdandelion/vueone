@@ -8,30 +8,18 @@
         <div class="bear"></div>
         <!-- 导航栏居中  外面大盒子 -->
         <div class="header">
-          <div class="wechat">官方微信</div>
+         <div class="wechat">
+            <a href="javascript:;">官方微信</a>
+            <div class="er">
+            <img src="../../../public/images/er.png" alt="">
+            </div>
+          </div>
           <!-- 登录与注册 -->
           <div class="login_register">
             <span>你好！</span>
             <a href="#" @click="login">请登录</a>
             <a href="#">免费注册</a>
           </div>
-          <!-- 右侧导航菜单 -->
-          <el-menu  class="el-menu-demo"  mode="horizontal"  background-color="#333"  text-color="#fff"  active-text-color="#DE342F">
-          <el-menu-item index="1">处理中心</el-menu-item>
-          <el-submenu index="2">
-            <template slot="title">我的工作台</template>
-            <el-menu-item index="2-1">选项1</el-menu-item>
-            <el-menu-item index="2-2">选项2</el-menu-item>
-            <el-menu-item index="2-3">选项3</el-menu-item>
-            <el-submenu index="2-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="2-4-1">选项1</el-menu-item>
-              <el-menu-item index="2-4-2">选项2</el-menu-item>
-              <el-menu-item index="2-4-3">选项3</el-menu-item>
-            </el-submenu>
-          </el-submenu>
-          <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
-        </el-menu>
         </div>
       </el-header>
       <el-main>
@@ -77,32 +65,198 @@
               <li>
                 <a href="javascipt:;">
                   <div class="lan">
-                    <img src="../../../public/images/pic.jpg" alt="陶瓷">
+                    <img src="../../../public/taoci/taoci_1.jpg" alt="陶瓷">
                   </div>
                   <div class="zezhao">
-                  遮罩
+                    <router-link :to="{ path: './taociPicOne'}" replace>详情</router-link>
                 </div>
                 </a>
                 <div class="description">
-                  <p>123</p>
+                  <p>唐三彩马</p>
                 </div>
               </li>
               <li>
                 <a href="javascipt:;">
                   <div class="lan">
-                    <img src="../../../public/images/pic.jpg" alt="陶瓷">
+                    <img src="https://img.alicdn.com/bao/uploaded/i4/1104199963/O1CN01MpNSWK2NT6aP3ixgO_!!0-item_pic.jpg_360x360xzq90s150.jpg_.webp" alt="陶瓷">
                   </div>
                   <div class="zezhao">
-                  遮罩2
+                    <router-link :to="{ path: './taociPicTwo'}" replace>详情</router-link>
                 </div>
                 </a>
                 <div class="description">
-                  <p>123</p>
+                  <p>摆件阿里</p>
                 </div>
               </li>
-              <li>3</li>
-              <li>4</li>
-              <li>5</li>
+              <li>
+                <a href="javascipt:;">
+                  <div class="lan">
+                    <img src="https://gd4.alicdn.com/imgextra/i1/2881592561/O1CN01KkoB351UmytyjhAEw_!!2881592561.jpg" alt="陶瓷">
+                  </div>
+                  <div class="zezhao">
+                    <router-link :to="{ path: './taociPicThree'}" replace>详情</router-link>
+                </div>
+                </a>
+                <div class="description">
+                  <p>陶瓷牛</p>
+                </div>
+              </li>
+              <li>
+                <a href="javascipt:;">
+                  <div class="lan">
+                    <img src="https://img.alicdn.com/imgextra/i4/1689257838/O1CN01f5IBdY27lqt0vLxOI_!!1689257838.jpg" alt="陶瓷">
+                  </div>
+                  <div class="zezhao">
+                    <router-link :to="{ path: './taociPicFour'}" replace>详情</router-link>
+                </div>
+                </a>
+                <div class="description">
+                  <p>椭圆花瓶</p>
+                </div>
+              </li>
+              <li>
+                <a href="javascipt:;">
+                  <div class="lan">
+                    <img src="../../../public/taoci/1_6.jpg" alt="陶瓷">
+                  </div>
+                  <div class="zezhao">
+                    <router-link :to="{ path: './taociPicFive'}" replace>详情</router-link>
+                </div>
+                </a>
+                <div class="description">
+                  <p>姜太公钓鱼</p>
+                </div>
+              </li>
+              <li>
+                <a href="javascipt:;">
+                  <div class="lan">
+                    <img src="../../../public/taoci/taoci_1.jpg" alt="陶瓷">
+                  </div>
+                  <div class="zezhao">
+                    <router-link :to="{ path: './taociPicOne'}" replace>详情</router-link>
+                </div>
+                </a>
+                <div class="description">
+                  <p>唐三彩马</p>
+                </div>
+              </li>
+              <li>
+                <a href="javascipt:;">
+                  <div class="lan">
+                    <img src="https://img.alicdn.com/bao/uploaded/i4/1104199963/O1CN01MpNSWK2NT6aP3ixgO_!!0-item_pic.jpg_360x360xzq90s150.jpg_.webp" alt="陶瓷">
+                  </div>
+                  <div class="zezhao">
+                    <router-link :to="{ path: './taociPicTwo'}" replace>详情</router-link>
+                </div>
+                </a>
+                <div class="description">
+                  <p>摆件阿里</p>
+                </div>
+              </li>
+              <li>
+                <a href="javascipt:;">
+                  <div class="lan">
+                    <img src="https://gd4.alicdn.com/imgextra/i1/2881592561/O1CN01KkoB351UmytyjhAEw_!!2881592561.jpg" alt="陶瓷">
+                  </div>
+                  <div class="zezhao">
+                    <router-link :to="{ path: './taociPicThree'}" replace>详情</router-link>
+                </div>
+                </a>
+                <div class="description">
+                  <p>陶瓷牛</p>
+                </div>
+              </li>
+              <li>
+                <a href="javascipt:;">
+                  <div class="lan">
+                    <img src="https://img.alicdn.com/imgextra/i4/1689257838/O1CN01f5IBdY27lqt0vLxOI_!!1689257838.jpg" alt="陶瓷">
+                  </div>
+                  <div class="zezhao">
+                    <router-link :to="{ path: './taociPicFour'}" replace>详情</router-link>
+                </div>
+                </a>
+                <div class="description">
+                  <p>椭圆花瓶</p>
+                </div>
+              </li>
+              <li>
+                <a href="javascipt:;">
+                  <div class="lan">
+                    <img src="../../../public/taoci/1_6.jpg" alt="陶瓷">
+                  </div>
+                  <div class="zezhao">
+                    <router-link :to="{ path: './taociPicFive'}" replace>详情</router-link>
+                </div>
+                </a>
+                <div class="description">
+                  <p>姜太公钓鱼</p>
+                </div>
+              </li>
+              <li>
+                <a href="javascipt:;">
+                  <div class="lan">
+                    <img src="../../../public/taoci/taoci_1.jpg" alt="陶瓷">
+                  </div>
+                  <div class="zezhao">
+                    <router-link :to="{ path: './taociPicOne'}" replace>详情</router-link>
+                </div>
+                </a>
+                <div class="description">
+                  <p>唐三彩马</p>
+                </div>
+              </li>
+              <li>
+                <a href="javascipt:;">
+                  <div class="lan">
+                    <img src="https://img.alicdn.com/bao/uploaded/i4/1104199963/O1CN01MpNSWK2NT6aP3ixgO_!!0-item_pic.jpg_360x360xzq90s150.jpg_.webp" alt="陶瓷">
+                  </div>
+                  <div class="zezhao">
+                    <router-link :to="{ path: './taociPicTwo'}" replace>详情</router-link>
+                </div>
+                </a>
+                <div class="description">
+                  <p>摆件阿里</p>
+                </div>
+              </li>
+              <li>
+                <a href="javascipt:;">
+                  <div class="lan">
+                    <img src="https://gd4.alicdn.com/imgextra/i1/2881592561/O1CN01KkoB351UmytyjhAEw_!!2881592561.jpg" alt="陶瓷">
+                  </div>
+                  <div class="zezhao">
+                    <router-link :to="{ path: './taociPicThree'}" replace>详情</router-link>
+                </div>
+                </a>
+                <div class="description">
+                  <p>陶瓷牛</p>
+                </div>
+              </li>
+              <li>
+                <a href="javascipt:;">
+                  <div class="lan">
+                    <img src="https://img.alicdn.com/imgextra/i4/1689257838/O1CN01f5IBdY27lqt0vLxOI_!!1689257838.jpg" alt="陶瓷">
+                  </div>
+                  <div class="zezhao">
+                    <router-link :to="{ path: './taociPicFour'}" replace>详情</router-link>
+                </div>
+                </a>
+                <div class="description">
+                  <p>椭圆花瓶</p>
+                </div>
+              </li>
+              <li>
+                <a href="javascipt:;">
+                  <div class="lan">
+                    <img src="../../../public/taoci/1_6.jpg" alt="陶瓷">
+                  </div>
+                  <div class="zezhao">
+                    <router-link :to="{ path: './taociPicFive'}" replace>详情</router-link>
+                </div>
+                </a>
+                <div class="description">
+                  <p>姜太公钓鱼</p>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
@@ -347,5 +501,30 @@ a {
 .nav_main a:hover{
   background-color: black;
   color: white;
+}
+.box_bd_ci .description p {
+    margin-top: 40px;
+}
+// 二维码
+.wechat a {
+  color: white;
+  font-size: 16px;
+}
+.er img{
+  position: absolute;
+  top: 60px;
+  left: 348px;
+  width: 128px;
+  height: 116px;
+}
+.header .er img{
+  opacity: 0;
+}
+.er img {
+  // 过渡写到本身上， 谁做动画，给谁加
+  transition: all .2s;
+}
+.wechat:hover img{
+    opacity: 1;
 }
 </style>

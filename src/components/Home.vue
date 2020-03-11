@@ -122,6 +122,7 @@ export default {
 }
 .el-main{
     background-color: #EAEDF1;
+    padding: 0!important;
 }
 .home_container{
   height: 100%;

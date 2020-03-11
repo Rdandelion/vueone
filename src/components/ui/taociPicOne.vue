@@ -50,9 +50,6 @@
           <div class="fen_qu">
             <!-- 左侧 -->
             <div class="middle_left">
-              <!-- <div class="xiang_img">
-                <img src="../../../public/images/floor-1-3.png" alt="">
-              </div> -->
               <div class="demo-image__preview">
                 <el-image  style="width: 100px; height: 100px" :src="url"  :preview-src-list="srcList"></el-image>
               </div>
@@ -136,7 +133,6 @@
                 </el-tab-pane>
                 <el-tab-pane label="趣味历史" name="third" class="third">
                   <p>唐三彩是唐代陶瓷中的精华，因为最早最多出土于洛阳，故被称为“洛阳唐三彩”。作为中国艺术瑰宝，唐三彩制品因其造型生动、颜色鲜艳、地域风情浓烈，有着迷人魅力，因此一直受到各博物馆、收藏家的追捧与热爱。 马可以多方位地折射出唐文化的绚丽光彩，不仅为人们提供了认识中国唐文化历史价值的宝贵实物资料，而且也使得一批又一批中外藏家为它的艺术魅力所倾倒。然而唐三彩在地下一千多年后重出于土时，却并不受待见！皆因为它是墓葬的陪葬品，带有阴气、晦气。</p>
-                  <img src="http://g.hiphotos.baidu.com/baike/s=220/sign=54e1ef454a90f60300b09b450913b370/503d269759ee3d6d8b98e4bf43166d224f4ade6c.jpg" alt="">
                   <p>1899年，勘探洛阳至开封铁路时，古墓中发现三彩器物，以晦气为由毁之。1905年，修建洛阳至开封铁路，古墓中发现的三彩器物被文物贩子运至北京琉璃厂古玩市场，无人问津。20世纪20年代，在北京古玩店的角落里，国学大师王国维和罗振玉慧眼识宝，中外收藏者始竞相收购。
                   唐三彩的受棒核心原因在于唐三彩的不可复制性、稀缺性。自唐代之后，唐三彩的制作工艺已经完全失传，后人虽极尽其力，但终不能攻克复制。《中国历史密码》这本书中关于唐三彩的介绍和故事，也非常详尽。
                   然而在20世纪90年代，唐三彩的制造终于被攻克，并且演绎出传奇的故事。
@@ -145,7 +141,6 @@
                   于是警方开始介入，查来查去，追查到洛阳市孟津县南石山村，追到了高水旺先生的家里......
                   事情终于揭开了谜底！原来是经过多年研究，农民高水旺攻克了唐三彩的高仿工艺。无论是胎釉特征、造型风格、光龄釉龄，还是银斑、细开片、哈利光等专家们借以辨识真假唐三彩的“眼上功夫”，甚至测试物质老化年代的碳14技术，都被攻破！高水旺已基本掌握了其中的技术秘密！高水旺只是按客户的图纸要求订作的。
                   这让专家们大破眼镜！至今潘家园的“惊天大案”成了收藏界的笑谈。</p>
-                  <img src="http://image104.360doc.com/DownloadImg/2017/03/0423/93048094_1.jpg" alt="">
                 </el-tab-pane>
               </el-tabs>
           </div>
@@ -159,9 +154,9 @@
 export default {
   data () {
     return {
-      url: 'http://attach2.scimg.cn/month_1201/13/9d7eb62335e326e0d6613875aa638e4c_orig.jpg',
+      url: 'http://img2.scimg.cn/userupload/auction/cover/4775/orig/688250.jpg?1475730473',
       srcList: [
-        'http://attach2.scimg.cn/month_1201/13/9d7eb62335e326e0d6613875aa638e4c_orig.jpg'
+        'http://img2.scimg.cn/userupload/auction/cover/4775/orig/688250.jpg?1475730473'
       ],
       activeName: 'first'
     }
